@@ -23,12 +23,15 @@ You can earn **up to 10 points** based on the successful completion of specific 
 - Display the current player and update the scoreboard dynamically.
 - Ensure a fair and structured point system for scoring.
 
-### **Task 4: UI and User Experience Enhancements (3 points)**
+
+
+### **Task 4: UI and User Experience Enhancements (2 points)**
 - Highlight the active player's turn visually.
 - Implement animations for card flipping and matching pairs.
 - Display an intuitive end-game summary with final scores.
 
-### **Optional Challenge**
+
+### **Bonus Challenge (1 point)**
 - Implement a **hint system** that briefly reveals unmatched cards.
 - Introduce different **game themes** (e.g., fruits, animals, numbers).
 
