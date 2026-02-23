@@ -9,7 +9,7 @@ Successfully completing this exercise will earn **3 points**.
 
 ## **Task Description**
 
-### **Task 1: Static Card Setup**
+### **Task 1: Static Card Setup** - OK
 - Define a set of cards directly in the HTML file.
 - Each card should have a matching pair and contain a placeholder symbol (`?`).
 

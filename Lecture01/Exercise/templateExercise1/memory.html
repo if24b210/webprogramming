@@ -12,18 +12,104 @@
 <body>
     <div class="container">
         <h1 class="text-center my-4">Memory Game</h1>
+
+        <p>Attempts: <span id="attempts">0</span></p>
+
         <div id="game-board" class="row justify-content-center">
-            <!-- Card elements will go here -->
-            <div class="card col-2 m-2 text-center" data-symbol="A" onclick="flipCard(this)">?</div>
-            <div class="card col-2 m-2 text-center" data-symbol="A" onclick="flipCard(this)">?</div>
-            <div class="card col-2 m-2 text-center" data-symbol="B" onclick="flipCard(this)">?</div>
-            <div class="card col-2 m-2 text-center" data-symbol="B" onclick="flipCard(this)">?</div>
-            <div class="card col-2 m-2 text-center" data-symbol="C" onclick="flipCard(this)">?</div>
-            <div class="card col-2 m-2 text-center" data-symbol="C" onclick="flipCard(this)">?</div>
+            <!-- Card elements will go here --> <!-- Task 1: Static Card Setup -->
+            <div class="card text-center" data-card-value="A" onclick="flipCard(this)">?</div>
+            <!-- this: give clicked Element -->
+            <div class="card text-center" data-card-value="A" onclick="flipCard(this)">?</div>
+            <div class="card text-center" data-card-value="B" onclick="flipCard(this)">?</div>
+            <div class="card text-center" data-card-value="B" onclick="flipCard(this)">?</div>
+            <div class="card text-center" data-card-value="C" onclick="flipCard(this)">?</div>
+            <div class="card text-center" data-card-value="C" onclick="flipCard(this)">?</div>
+            <div class="card text-center" data-card-value="D" onclick="flipCard(this)">?</div>
+            <div class="card text-center" data-card-value="D" onclick="flipCard(this)">?</div>
         </div>
     </div>
     <script>
-        // Place script code here
+        let firstCard = null;       // store the flipped cards
+        let secondCard = null;
+        let boardLocked = false;    // bord should be locked when two cards are flipped
+        let matchedCards = 0;       // count: card are matched
+        let attempts = 0;           // count: attempts, how many times player flipped two cards
+
+        function flipCard(card) {
+            if (boardLocked) {
+                return; // do nothing: locked, can not flip cards
+            }
+
+            if (card.classList.contains("flipped")) {
+                return; // do nothing: can not flip again, already flipped 
+            }
+
+            // OnClick Handling for Cards
+            console.log("Card clicked:", card.dataset.cardValue); // A, B, C, D
+
+
+            // char or symbol showing: A, B, C, D
+            card.textContent = card.dataset.cardValue; // textContext: show this card value
+
+            // css class: add "flipped" to this card
+            card.classList.add("flipped");
+
+            if (!firstCard) {
+                firstCard = card;   // store first flipped card
+                console.log("First card flipped:", firstCard.dataset.cardValue);
+                return;
+            }
+
+            secondCard = card;
+            console.log("Second card flipped:", secondCard.dataset.cardValue);
+            boardLocked = true;     // two card are flipped: lock
+
+            attempts++;             // count attempts
+            document.getElementById("attempts").textContent = attempts; // update attempts
+            console.log("Attempts:", attempts);
+
+            checkMatch();           // check if two flipped cards match
+        }
+
+        function checkMatch() {
+            if (firstCard.dataset.cardValue === secondCard.dataset.cardValue) {
+
+                matchedCards++;
+                console.log("Cards match! Total matched pairs:", matchedCards);
+
+                if (matchedCards === 4) { // matched pairs = 4 (A, B, C, D)}
+                    /*setTimeout(() => {
+                        alert("Congratulations, you won this game! You've matched all pairs!\nReload the page to play again.");
+                    }, 1000);*/
+                    let message = document.createElement("p");
+                    message.textContent = "Congratulations, you won this game! You've matched all pairs!Reload the page to play again.";
+                    message.style.backgroundColor = "green";
+                    message.classList.add("text-center", "my-4", "fw-bold");
+                    document.body.appendChild(message);
+
+                    // TODO: add button to reload page
+                }
+
+                // card match: cards are flipped, do nothing
+                //  TODO: make function for reset cards 
+                firstCard = null;
+                secondCard = null;
+                boardLocked = false;
+            }
+            else {
+                // card do not match:
+                // add timedelay and flip back cards
+                setTimeout(() => {
+                    firstCard.textContent = "?";
+                    secondCard.textContent = "?";
+                    firstCard.classList.remove("flipped");
+                    secondCard.classList.remove("flipped");
+                    firstCard = null;
+                    secondCard = null;
+                    boardLocked = false;
+                }, 500);  // 1 sec. delay = 1000 ms
+            }
+        }
     </script>
 </body>
 
