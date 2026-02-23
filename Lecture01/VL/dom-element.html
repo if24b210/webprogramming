@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <title>DOM Example</title>
+</head>
+
+<body>
+    <h1 id="title">Welcome to the DOM</h1>
+    <button class="btn" id="changeText">Click Me</button>
+    <button class="btn" id="resetText">Click Me</button>
+
+
+    <script>
+
+
+        let heading = document.getElementById("title");
+        console.log(heading);
+        console.log(heading.textContent); // Textinhalt des Elements: Welcome to the DOM
+        heading.textContent = "Hello DOM!"; // ändert denTextInhalt des Elements
+
+        heading.style.color = "blue";
+        heading.style.fontSize = "24px";
+
+        let buttons = document.getElementsByClassName("btn");   // gibt eine HtmlCollectionzurück
+        console.log(buttons); // HTMLCollection(0) []
+
+        //let button = document.getElementById("changeText");
+        //console.log(button); // <button name="btn" id="changeText">Click Me </button>
+
+        // neues Element erstellen
+        let newParagraph = document.createElement("p");
+        newParagraph.textContent = "This is a new paragraph";
+        document.body.appendChild(newParagraph);
+
+        function changeHeading() {
+            let heading = document.getElementById("title");
+            heading.textContent = "Chhnaged by Funtion!";
+            heading.style.color = "red";
+        }
+
+        // changeHeading();
+
+        // Buton clikbar
+        let button = document.getElementById("changeText");
+        button.addEventListener("click", changeHeading);
+
+    </script>
+</body>
