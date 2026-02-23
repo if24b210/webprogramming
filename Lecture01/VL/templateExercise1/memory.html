@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container">
         <h1 class="text-center my-4">Memory Game</h1>
@@ -16,6 +18,34 @@
     </div>
     <script>
         // Place script code here
+        // Initialize the Card Array
+        let cards = ["🍎", "🍎", "🍌", "🍌", "🍇", "🍇"];
+
+        // erst shuffeln, dann Die Karten anzeigen
+        function shuffle(array) {
+            array.sort(() => Math.random() - 0.5);
+        }
+
+        shuffle(cards);
+        console.log(cards); // Check shuffled order in Console
+
+        for (let i = 0; i < cards.length; i++) {
+            let card = document.createElement("div");
+            card.classList.add("card");
+            card.textContent = cards[i];
+
+            document.getElementById("game-board").appendChild(card);
+        }
+
+
+        /*
+        let card = document.createElement("div");
+        card.classList.add("card");
+        card.textContent = "🍎";
+
+        document.body.appendChild(card);
+        */
     </script>
 </body>
+
 </html>
