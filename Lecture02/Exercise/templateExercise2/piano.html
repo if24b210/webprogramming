@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="container text-center my-5">
         <h1>Virtual Piano</h1>
@@ -20,17 +22,32 @@
             <li class="list-inline-item"><strong>H</strong> - A</li>
             <li class="list-inline-item"><strong>J</strong> - B</li>
         </ul>
-        <div id="piano" class="d-flex justify-content-center">
+        <div id="piano">
             <!-- Piano keys with IDs for JavaScript interaction -->
-            <div class="key" id="keyC">C</div>
-            <div class="key" id="keyD">D</div>
-            <div class="key" id="keyE">E</div>
-            <div class="key" id="keyF">F</div>
-            <div class="key" id="keyG">G</div>
-            <div class="key" id="keyA">A</div>
-            <div class="key" id="keyB">B</div>
+            <div class="white-keys">
+                <div class="key" id="keyC" data-note="C">C</div>
+                <div class="key black" id="keyCis" data-note="Cis">C#</div>
+                <div class="key" id="keyD" data-note="D">D</div>
+                <div class="key black" id="keyDis" data-note="Dis">D#</div>
+                <div class="key" id="keyE" data-note="E">E</div>
+                <div class="key" id="keyF" data-note="F">F</div>
+                <div class="key black" id="keyFis" data-note="Fis">F#</div>
+                <div class="key" id="keyG" data-note="G">G</div>
+                <div class="key black" id="keyGis" data-note="Gis">G#</div>
+                <div class="key" id="keyA" data-note="A">A</div>
+                <div class="key black" id="keyAis" data-note="Ais">A#</div>
+                <div class="key" id="keyB" data-note="B">B</div>
+            </div>
+
+            <!-- Black
+            <div class="key black" id="keyCis" data-note="Cis">C#</div>
+            <div class="key black" id="keyDis" data-note="Dis">D#</div>
+            <div class="key black" id="keyFis" data-note="Fis">F#</div>
+            <div class="key black" id="keyGis" data-note="Gis">G#</div>
+            <div class="key black" id="keyAis" data-note="Ais">A#</div> -->
         </div>
     </div>
     <script src="script.js"></script>
 </body>
+
 </html>
