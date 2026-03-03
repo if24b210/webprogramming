@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 02 - User Experience</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <!-- click event -->
+    <button id="myButton">Click Me</button>
+
+    <div id="piano">
+        <button class="key" id="keyC">C</button>
+        <button class="key" id="keyD">D</button>
+        <button class="key" id="keyE">E</button>
+    </div>
+
+
+    <script>
+        function playSound(note) {
+            console.log("Playing:", note);
+            let audio = new Audio(`sounds/${note}.mp3`);    // Audio loads and plays a sound file for the specific note
+            audio.play();
+        }
+
+        document.getElementById("keyC").addEventListener("click", function () {
+            playSound("C");
+        });
+        document.getElementById("keyD").addEventListener("click", function () {
+            playSound("D");
+        });
+        document.getElementById("keyE").addEventListener("click", function () {
+            playSound("E");
+        });
+
+        // Keyboard mapping for piano keys
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "a") {
+                playSound("C");
+            } else if (event.key === "s") {
+                playSound("D");
+            } else if (event.key === "d") {
+                playSound("E");
+            }
+        });
+
+
+        // document.addEventListener("click", function (event) {
+        //     console.log("Mouse Clicked at: ", event.clientX, event.clientY);
+        // });
+
+        document.addEventListener("keydown", function (event) {
+            console.log("Key pressed:", event.key);
+        });
+
+        document.getElementById("myButton").addEventListener("click", function () {
+            console.log("Button Clicked");
+        });
+
+        function greet(name) {
+            console.log("Hello, " + name + "!");
+        }
+        greet("Alice");
+
+        function sum(a, b) {
+            return a + b;
+        }
+        console.log("The Sum is: " + sum(5, 7));
+
+        function test() {
+            console.log("before return");
+            return 10;
+            console.log("after return"); // This will never be executed
+        }
+
+        let result = test();
+        console.log(result); // Output: 10
+
+        function multiply(a, b) {
+            return a * b;
+        }
+        let product = multiply(4, 5);
+        console.log("product= " + product);
+    </script>
+</body>
+
+</html>
