@@ -8,10 +8,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container text-center">
         <h1 class="text-center my-4">Memory Game</h1>
+        <div id="game-win-message" class="alert alert-success text-center" style="display:none">
+            You won the game!
+        </div>
+        
+        <div class="row my-4">
+            <div class="col">
+                <p id="move-counter">Moves: 0</p>
+            </div>
+            <div class="col">Difficalty Level<br>
+                <select id="level">
+                    <option value="3">Medium (3 x 2) grid</option>
+                    <option value="2">Easy (2 x 2) grid</option>
+                    <option value="4" selected>Hard (4 x 2) grid</option>
+                </select>
+            </div>
+            <div class="col">
+                <p id="game-timer">Time: 00:00</p>
+            </div>
+        </div>
+
         <div id="game-board" class="row justify-content-center">
             <!-- Card elements will go here -->
+        </div>
+        <div class="text-center my-4">
+            <button id="reset-button" class="btn btn-outline-primary btn-lg" type="reset">Reset Game</button>
         </div>
     </div>
     <script src="script.js"></script>
