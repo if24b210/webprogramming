@@ -1,0 +1,21 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Getting Started with Web Programming",
+            "body": "this is body !",
+            "author": "John Doe",
+            "date": "2024-01-15",
+            "content": "This is an introduction to web programming...",
+            "tags": ["web", "programming", "tutorial"]
+        },
+        {
+            "id": 2,
+            "title": "Understanding JSON",
+            "author": "Jane Smith",
+            "date": "2024-01-20",
+            "content": "JSON is a lightweight data format...",
+            "tags": ["json", "data", "format"]
+        }
+    ]
+}

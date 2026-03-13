@@ -23,6 +23,15 @@ const levelSelect = document.getElementById('level');           // Dropdown Diff
 resetButton.addEventListener('click', resetGame); 
 levelSelect.addEventListener('change', resetGame); // Difficulty Levels: changing Game level and start new Game
 
+/*
+levelSelect.addEventListener('change', handleLevelChange); // Difficulty Levels: changing Game level and start new Game
++ 
++ function handleLevelChange(event) {
++     resetGame();
++ }
+*/
+
+
 // Functions
 function shuffle(array) {   // Shuffle the array
     array.sort(() => Math.random() - 0.5);
