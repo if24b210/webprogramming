@@ -1,0 +1,12 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": { // Task 1
+    // File Layout
+    "target": "es6",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "strict": true,
+    "sourceMap": true
+  },
+  "include": ["src"]
+}

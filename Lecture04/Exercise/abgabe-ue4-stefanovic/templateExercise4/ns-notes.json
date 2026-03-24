@@ -1,0 +1,11 @@
+
+{
+    "title": "My Song",
+    "artist": "NS",
+    "album": "NS Album",
+    "year": 2026,
+    "genre": "classic",
+    "duration": "2:23",
+    "lyrics": "My lyrics ...",
+    "tags": ["tag1", "tag2"]
+}
